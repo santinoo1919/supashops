@@ -1,6 +1,13 @@
 {
-  "buildCommand": "npm install && npx expo export:web",
-  "outputDirectory": "web-build",
-  "framework": "other",
-  "installCommand": "npm install"
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "npm install && npx expo export:web",
+        "outputDirectory": "web-build"
+      }
+    }
+  ]
 }
