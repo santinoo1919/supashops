@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm install && npx expo export:web",
+  "outputDirectory": "web-build",
+  "framework": "other",
+  "installCommand": "npm install"
+}

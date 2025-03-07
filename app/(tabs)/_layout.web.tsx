@@ -11,25 +11,21 @@ export default function TabsLayoutWeb() {
         <Text className="text-slate-800 font-bold text-3xl font-brand">
           SupaShops
         </Text>
-        <View className="flex-row items-center align-middle gap-1 rounded-full px-4 py-1 bg-slate-800">
-          <Text className="text-white font-medium text-xs">Tunis</Text>
+        <View className="flex-row items-center align-middle gap-1 rounded-full px-3 py-1 bg-slate-600">
+          <Text className="text-slate-100 font-medium text-xs">Tunis</Text>
           <Text className="text-sm">🇹🇳</Text>
         </View>
       </View>
       <View className="flex-row gap-6">
         <Link
           href="/"
-          className={`text-content-secondary ${
-            pathname === "/" ? "font-bold" : ""
-          }`}
+          className={`text-content ${pathname === "/" ? "font-bold" : ""}`}
         >
           Home
         </Link>
         <Link
           href="/about"
-          className={`text-content-secondary ${
-            pathname === "/about" ? "font-bold" : ""
-          }`}
+          className={`text-content ${pathname === "/about" ? "font-bold" : ""}`}
         >
           About
         </Link>

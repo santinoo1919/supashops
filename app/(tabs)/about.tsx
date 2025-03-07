@@ -1,79 +1,65 @@
+import { MotiView } from "moti";
 import React from "react";
-import { ScrollView, useWindowDimensions } from "react-native";
-import Link from "expo-router/link";
-import {
-  Box,
-  VStack,
-  Heading,
-  Text,
-  Button,
-  Divider,
-  Center,
-} from "@gluestack-ui/themed";
+import { ScrollView, View, Text, useWindowDimensions } from "react-native";
 
 export default function AboutPage() {
   const { width } = useWindowDimensions();
   const isDesktop = width > 768;
 
   return (
-    <ScrollView>
-      <Center>
-        <Box
-          p="$5"
-          bg="$white"
-          maxWidth={isDesktop ? 1024 : "100%"}
-          w="$full"
-          my={isDesktop ? "$8" : "$0"}
-          rounded={isDesktop ? "$xl" : "$none"}
-          shadowColor="$gray900"
-          shadowOpacity={isDesktop ? 0.1 : 0}
-          shadowRadius={isDesktop ? 4 : 0}
-          shadowOffset={{ width: 0, height: 2 }}
-        >
-          <VStack space="md">
-            <Heading size="xl" textAlign="center">
-              About Tunis Car Services
-            </Heading>
+    <View className="flex-1 bg-lime-50">
+      <ScrollView className="flex-1 pt-4">
+        <View className="flex items-center px-4">
+          <MotiView
+            from={{ opacity: 0, translateY: 50 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            transition={{
+              type: "spring",
+              damping: 20,
+              stiffness: 300,
+            }}
+          >
+            <View
+              className={`p-5 border border-lime-200 rounded-lg w-full ${
+                isDesktop ? "max-w-[600px] my-24 rounded-xl shadow-xs" : "my-24"
+              }`}
+            >
+              <View className="space-y-4">
+                <Text className="text-2xl font-brand font-bold text-slate-800 text-center">
+                  About SupaShops
+                </Text>
 
-            <Text mt="$4">
-              Welcome to Tunis Car Services, your trusted directory for finding
-              the best automotive services in Tunis.
-            </Text>
+                <Text className="mt-4 text-content-secondary text-sm">
+                  Finding hyperlocal services on Google is too noisy. Competing
+                  with ads, unrelated stuff plus not enough reviews on Maps for
+                  emerging countries.
+                </Text>
+                <Text className="text-content-secondary text-sm">
+                  People are not used to leave reviews and read them.
+                  Complicated and no incentives. We need a simple place to find
+                  reliable services around.
+                </Text>
 
-            <Text>
-              Our mission is to connect car owners with reliable, high-quality
-              service providers throughout the city. Whether you need routine
-              maintenance, emergency repairs, or specialized services for luxury
-              vehicles, our directory helps you find the right professionals for
-              the job.
-            </Text>
+                <Text className="text-content-secondary text-sm">
+                  Supashops is a simple place to find already curated services.
+                  More you review, more you unlock places hidden to others.
+                </Text>
 
-            <Heading size="md" mt="$4">
-              Our Features
-            </Heading>
-            <Text>
-              • Comprehensive listings of verified car service providers{"\n"}•
-              Detailed information about services offered{"\n"}• Direct contact
-              options{"\n"}• Location information with map integration
-            </Text>
+                <Text className="text-content-secondary text-sm">
+                  If you'd like to add your business to our directory or have
+                  any questions, please contact us at: contact@supashops.com
+                </Text>
 
-            <Heading size="md" mt="$4">
-              Contact Us
-            </Heading>
-            <Text>
-              If you'd like to add your business to our directory or have any
-              questions, please contact us at:{"\n"}
-              contact@tuniscarservices.com
-            </Text>
+                <View className="my-4 h-px bg-lime-200" />
 
-            <Divider my="$4" />
-
-            <Text color="$gray500" textAlign="center" mt="$4">
-              Version 1.0.0
-            </Text>
-          </VStack>
-        </Box>
-      </Center>
-    </ScrollView>
+                <Text className="text-gray-500 text-center mt-4">
+                  Version 1.0.0
+                </Text>
+              </View>
+            </View>
+          </MotiView>
+        </View>
+      </ScrollView>
+    </View>
   );
 }
