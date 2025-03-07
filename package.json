@@ -14,10 +14,17 @@
   },
   "overrides": {
     "metro": "0.76.0",
-    "metro-resolver": "0.76.0"
+    "metro-resolver": "0.76.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
+  
   "jest": {
     "preset": "jest-expo"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "dependencies": {
     "@expo-google-fonts/lilita-one": "^0.2.3",
@@ -64,7 +71,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/jest": "^29.5.12",
-    "@types/react": "~18.3.12",
+    "@types/react": "~18.2.14",
     "@types/react-native": "^0.72.8",
     "@types/react-test-renderer": "^18.3.0",
     "autoprefixer": "^10.4.20",
@@ -76,7 +83,7 @@
     "react-test-renderer": "18.3.1",
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.2"
+    "typescript": "^5.1.3"
   },
   "private": true
 }
