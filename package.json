@@ -1,6 +1,6 @@
 {
   "name": "tunis-services-directory",
-  "main": "expo-router/entry",
+  "main": "web-entry.js",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build:web": "npx expo export --platform web",
-    "vercel-build": "npx expo export --platform web"
+    "vercel-build": "node vercel-build.js"
   },
   "dependencies": {
     "@expo-google-fonts/lilita-one": "^0.2.3",
