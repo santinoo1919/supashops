@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build:web": "npx expo export --platform web",
-    "vercel-build": "node vercel-build.js"
+    "vercel-build": "mkdir -p dist && cp -r static/* dist/"
   },
   "dependencies": {
     "@expo-google-fonts/lilita-one": "^0.2.3",
