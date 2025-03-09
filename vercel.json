@@ -5,9 +5,13 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "npm install && npx expo export:web",
-        "outputDirectory": "web-build"
+        "buildCommand": "npm run build:web",
+        "outputDirectory": "dist"
       }
     }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

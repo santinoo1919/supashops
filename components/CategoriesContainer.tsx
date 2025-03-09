@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import Swiper from "react-native-deck-swiper";
 import { CategoryCard } from "./CategoryCard";
+import { Platform } from "react-native";
 
 type CategoriesContainerProps = {
   activeIndex: number;
@@ -32,11 +33,58 @@ export function CategoriesContainer({
   activeIndex,
   setActiveIndex,
 }: CategoriesContainerProps) {
+  // For web, we'll use a simplified version since Swiper might have issues on web
+  if (Platform.OS === "web") {
+    return (
+      <View
+        style={{
+          height: 100,
+          width: "100%",
+          flexDirection: "row",
+          marginBottom: 64,
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 16,
+        }}
+      >
+        {categories.map((category, index) => (
+          <View
+            key={category.id}
+            style={{
+              opacity: activeIndex === index ? 1 : 0.7,
+              transform: [
+                { scale: activeIndex === index ? 1 : 0.85 },
+                {
+                  rotate: index === 1 ? "5deg" : index === 2 ? "-5deg" : "0deg",
+                },
+                {
+                  translateX: index === 1 ? 20 : index === 2 ? -20 : 0,
+                },
+              ],
+            }}
+          >
+            <CategoryCard category={category} style={{}} />
+          </View>
+        ))}
+      </View>
+    );
+  }
+
+  // For mobile, use the original Swiper implementation
   return (
-    <View className="h-[100px] w-full flex-row mb-16 place-content-center items-center justify-center">
+    <View
+      style={{
+        height: 100,
+        width: "100%",
+        flexDirection: "row",
+        marginBottom: 64,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Swiper
         cards={categories}
-        renderCard={(category) => (
+        renderCard={(category: any) => (
           <CategoryCard
             category={category}
             style={{
@@ -71,10 +119,10 @@ export function CategoriesContainer({
         backgroundColor="transparent"
         disableBottomSwipe
         disableTopSwipe
-        onSwipedLeft={(cardIndex) => {
+        onSwipedLeft={(cardIndex: number) => {
           setActiveIndex((cardIndex + 1) % 3); // Always go forward
         }}
-        onSwipedRight={(cardIndex) => {
+        onSwipedRight={(cardIndex: number) => {
           setActiveIndex((cardIndex + 1) % 3); // Same as left swipe
         }}
         useViewOverflow={false}

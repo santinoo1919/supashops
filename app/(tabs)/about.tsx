@@ -1,4 +1,3 @@
-import { MotiView } from "moti";
 import React from "react";
 import { ScrollView, View, Text, useWindowDimensions } from "react-native";
 
@@ -10,15 +9,7 @@ export default function AboutPage() {
     <View className="flex-1 bg-lime-50">
       <ScrollView className="flex-1 pt-4">
         <View className="flex items-center px-4">
-          <MotiView
-            from={{ opacity: 0, translateY: 50 }}
-            animate={{ opacity: 1, translateY: 0 }}
-            transition={{
-              type: "spring",
-              damping: 20,
-              stiffness: 300,
-            }}
-          >
+          <View>
             <View
               className={`p-5 border border-lime-200 rounded-lg w-full ${
                 isDesktop ? "max-w-[600px] my-24 rounded-xl shadow-xs" : "my-24"
@@ -57,7 +48,7 @@ export default function AboutPage() {
                 </Text>
               </View>
             </View>
-          </MotiView>
+          </View>
         </View>
       </ScrollView>
     </View>

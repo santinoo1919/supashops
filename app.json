@@ -1,19 +1,17 @@
 {
   "expo": {
-    "name": "Tunis Services",
-    "slug": "tunis-services",
+    "name": "Tunis Services Directory",
+    "slug": "tunis-services-directory",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "tunis-services",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -24,20 +22,10 @@
       }
     },
     "web": {
-      "bundler": "metro",
-      "favicon": "./favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
-    "plugins": [
-      "expo-router",
-      "expo-font"
-    ],
-    "extra": {
-      "router": {
-        "origin": false
-      },
-      "eas": {
-        "projectId": "d9be1a8a-b601-4dca-9963-3d566156ac3d"
-      }
-    }
+    "plugins": ["expo-router"],
+    "scheme": "tunservices"
   }
 }

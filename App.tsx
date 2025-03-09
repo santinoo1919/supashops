@@ -16,7 +16,18 @@ export default function App(): JSX.Element {
 
       <ScrollView className="flex-1 px-4 pt-4">
         {carServices.map((service) => (
-          <ServiceCard key={service.id} service={service} />
+          <ServiceCard
+            key={service.id}
+            service={service}
+            variant={0}
+            onPress={() => {
+              // Optional: Add navigation to details page
+              // router.push({
+              //   pathname: "/modal",
+              //   params: { serviceId: service.id, category: 0 }
+              // })
+            }}
+          />
         ))}
 
         <View className="h-4" />

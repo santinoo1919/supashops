@@ -15,22 +15,36 @@ type CategoryCardProps = {
 export function CategoryCard({ category, style }: CategoryCardProps) {
   return (
     <View
-      style={style}
-      className="bg-white w-20 h-20 border-4 border-lime-300 rounded-2xl p-6 shadow-sm place-content-center cursor-grab active:cursor-grabbing"
+      style={[
+        {
+          backgroundColor: "white",
+          width: 80,
+          height: 80,
+          borderWidth: 4,
+          borderColor: "#a3e635", // lime-300
+          borderRadius: 16,
+          padding: 24,
+          shadowColor: "#000",
+          shadowOpacity: 0.1,
+          shadowRadius: 2,
+          shadowOffset: { width: 0, height: 1 },
+          elevation: 2,
+          justifyContent: "center",
+          alignItems: "center",
+        },
+        style,
+      ]}
     >
-      <View className="flex-col items-center gap-1">
+      <View style={{ flexDirection: "column", alignItems: "center", gap: 4 }}>
         <Ionicons
           name={category.icon as any}
           size={24}
           color={category.color}
         />
-        <Text className="text-xs font-bold">{category.title}</Text>
+        <Text style={{ fontSize: 12, fontWeight: "bold" }}>
+          {category.title}
+        </Text>
       </View>
-      <Text className=" text-content-secondary">
-        {category.title === "Workshop"}
-        {category.title === "CarWash"}
-        {category.title === "CarParts"}
-      </Text>
     </View>
   );
 }
